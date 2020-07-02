@@ -1,0 +1,19 @@
+{
+  "parser": "",
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "one-var": "off",
+    "require-jsdoc": "off",
+    "indent": "off",
+    "comma-dangle": "off",
+    "eol-last": "off"
+  },
+  "extends": ["eslint:recommended", "google"],
+  "parserOptions": {
+    "sourceType": "module"
+  }
+}
