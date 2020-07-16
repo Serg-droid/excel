@@ -82,7 +82,7 @@ export class Dom {
   }
 
   text(text) {
-    if(typeof text === 'string') {
+    if(typeof text !== 'undefined') {
       this.$el.textContent = text;
       return this;
     }
@@ -101,6 +101,23 @@ export class Dom {
       }
     }
     return this.data.id;
+  }
+
+  getStyles(styles = []) {
+    return styles.reduce((acc, s) => {
+      acc[s] = this.$el.style[s];
+      return acc;
+    }, {});
+  }
+
+  attr(name, val) {
+    if(val) {
+      this.$el.setAttribute(name, val);
+      return this;
+    } else if(val === '') {
+      return this;
+    }
+    return this.$el.getAttribute(name);
   }
 }
 
